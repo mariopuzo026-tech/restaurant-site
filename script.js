@@ -407,3 +407,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// ===== BACK TO TOP - დაამატე ბოლოში =====
+const backToTop = document.querySelector('.back-to-top');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+        backToTop.classList.add('show');
+    } else {
+        backToTop.classList.remove('show');
+    }
+});
+
+if (backToTop) {
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
