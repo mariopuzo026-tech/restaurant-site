@@ -1,15 +1,9 @@
-// ===== LOADER =====
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.querySelector('.loader').classList.add('hidden');
-    }, 1500);
-});
-
 // ===== NAVIGATION =====
 const navbar = document.querySelector('.navbar');
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
+// Navbar scroll effect
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
@@ -18,10 +12,12 @@ window.addEventListener('scroll', () => {
     }
 });
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
+// Mobile menu toggle
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
 
 // ===== HERO SLIDER =====
 class HeroSlider {
@@ -199,6 +195,8 @@ const blogData = [
 // ===== RENDER FUNCTIONS =====
 function renderMenu(items) {
     const menuGrid = document.getElementById('menu-grid');
+    if (!menuGrid) return;
+    
     menuGrid.innerHTML = items.map(item => `
         <div class="menu-item" data-category="${item.category}">
             <div class="menu-item-image">
@@ -221,11 +219,13 @@ function renderMenu(items) {
 
 function renderGallery() {
     const galleryGrid = document.getElementById('gallery-grid');
+    if (!galleryGrid) return;
+    
     galleryGrid.innerHTML = galleryData.map(item => `
         <div class="gallery-item">
             <img src="${item.image}" alt="${item.title}">
             <div class="gallery-overlay">
-                <h4>${item.title}</h4>
+                <h3>${item.title}</h3>
                 <i class="fas fa-search-plus"></i>
             </div>
         </div>
@@ -234,8 +234,10 @@ function renderGallery() {
 
 function renderBlog() {
     const blogGrid = document.getElementById('blog-grid');
+    if (!blogGrid) return;
+    
     blogGrid.innerHTML = blogData.map(item => `
-        <article class="blog-card">
+        <article class="blog-card glass-card">
             <div class="blog-image">
                 <img src="${item.image}" alt="${item.title}">
                 <div class="blog-date">
@@ -270,10 +272,8 @@ function initMenuFilter() {
             menuItems.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
                     item.style.display = 'block';
-                    setTimeout(() => item.style.opacity = '1', 10);
                 } else {
-                    item.style.opacity = '0';
-                    setTimeout(() => item.style.display = 'none', 300);
+                    item.style.display = 'none';
                 }
             });
         });
@@ -314,6 +314,8 @@ function initStatsCounter() {
 function initBackToTop() {
     const backToTop = document.querySelector('.back-to-top');
     
+    if (!backToTop) return;
+    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
             backToTop.classList.add('show');
@@ -330,70 +332,8 @@ function initBackToTop() {
     });
 }
 
-// ===== CONTACT FORM =====
-function initContactForm() {
-    const form = document.getElementById('contact-form');
-    
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // აქ შეგიძლიათ დაამატოთ ფორმის გაგზავნის ლოგიკა
-        const formMessage = document.getElementById('form-message');
-        formMessage.textContent = 'მესიჯი გაიგზავნა წარმატებით!';
-        formMessage.className = 'form-message success';
-        
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-            form.reset();
-        }, 3000);
-    });
-}
-
-// ===== LIGHTBOX =====
-function initLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close-lightbox');
-    
-    document.querySelectorAll('.gallery-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            lightboxImg.src = img.src;
-            lightbox.style.display = 'block';
-        });
-    });
-    
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-    });
-    
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = 'none';
-        }
-    });
-}
-
-// ===== INITIALIZE AOS =====
-AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100
-});
-
-// ===== INITIALIZE EVERYTHING =====
-document.addEventListener('DOMContentLoaded', () => {
-    new HeroSlider();
-    renderMenu(menuData);
-    renderGallery();
-    renderBlog();
-    initMenuFilter();
-    initStatsCounter();
-    initBackToTop();
-    initContactForm();
-    initLightbox();
-    
-    // Smooth scroll for anchor links
+// ===== SMOOTH SCROLL =====
+function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -406,22 +346,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
-// ===== BACK TO TOP - დაამატე ბოლოში =====
-const backToTop = document.querySelector('.back-to-top');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-        backToTop.classList.add('show');
-    } else {
-        backToTop.classList.remove('show');
-    }
-});
+}
 
-if (backToTop) {
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+// ===== INITIALIZE EVERYTHING =====
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize slider
+    if (document.querySelector('.hero-slider')) {
+        new HeroSlider();
+    }
+    
+    // Render data
+    renderMenu(menuData);
+    renderGallery();
+    renderBlog();
+    
+    // Initialize functions
+    initMenuFilter();
+    initStatsCounter();
+    initBackToTop();
+    initSmoothScroll();
+    
+    // Mobile menu close on link click
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
         });
     });
-}
+});

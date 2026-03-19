@@ -8,38 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ლოდინის ანიმაცია -->
-    <div class="loader">
-        <div class="loader-content">
-            <div class="plate"></div>
-            <div class="utensils">
-                <i class="fas fa-utensils"></i>
+    <!-- ნავიგაცია -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">გურმანი</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">მთავარი</a></li>
+                <li><a href="#about">ჩვენ შესახებ</a></li>
+                <li><a href="#menu">მენიუ</a></li>
+                <li><a href="#gallery">გალერეა</a></li>
+                <li><a href="#blog">ბლოგი</a></li>
+                <li><a href="#contact">კონტაქტი</a></li>
+                <li><a href="#reservation" class="nav-btn glass-btn">დაჯავშნე</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </div>
-
-<!-- ჰედერის ნავიგაცია - შეცვალეთ არსებული navbar -->
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="#" class="nav-logo">
-            <span class="logo-text">გურმანი</span>
-        </a>
-        <ul class="nav-menu">
-            <li><a href="#home">მთავარი</a></li>
-            <li><a href="#about">ჩვენ შესახებ</a></li>
-            <li><a href="#menu">მენიუ</a></li>
-            <li><a href="#gallery">გალერეა</a></li>
-            <li><a href="#contact">კონტაქტი</a></li>
-            <li><a href="#reservation" class="nav-btn glass-btn">დაჯავშნე</a></li>
-        </ul>
-    </div>
-</nav>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -48,7 +42,7 @@
                 <div class="slide-image">
                     <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2070" alt="რესტორანი">
                 </div>
-                <div class="slide-content">
+                <div class="slide-content glass">
                     <span class="subtitle">კეთილი იყოს თქვენი მობრძანება</span>
                     <h1>გემოს <span>სიმფონია</span></h1>
                     <p>აღმოაჩინეთ ქართული სამზარეულოს ნამდვილი გემო</p>
@@ -62,7 +56,7 @@
                 <div class="slide-image">
                     <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070" alt="კერძები">
                 </div>
-                <div class="slide-content">
+                <div class="slide-content glass">
                     <span class="subtitle">ტრადიცია და თანამედროვეობა</span>
                     <h1>კულინარიული <span>ხელოვნება</span></h1>
                     <p>შეფ-მზარეულის ექსკლუზიური კერძები</p>
@@ -76,7 +70,7 @@
                 <div class="slide-image">
                     <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070" alt="ინტერიერი">
                 </div>
-                <div class="slide-content">
+                <div class="slide-content glass">
                     <span class="subtitle">განსაკუთრებული ატმოსფერო</span>
                     <h1>დაუვიწყარი <span>საღამოები</span></h1>
                     <p>იდეალური ადგილი განსაკუთრებული შემთხვევებისთვის</p>
@@ -88,14 +82,9 @@
             </div>
         </div>
         <div class="slider-controls">
-            <button class="slider-prev"><i class="fas fa-arrow-left"></i></button>
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
             <div class="slider-dots"></div>
-            <button class="slider-next"><i class="fas fa-arrow-right"></i></button>
-        </div>
-        <div class="hero-social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
@@ -103,40 +92,40 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-images" data-aos="fade-right">
+                <div class="about-images">
                     <div class="image-main">
                         <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=2070" alt="რესტორანი">
                     </div>
                     <div class="image-small">
                         <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1887" alt="კერძი">
                     </div>
-                    <div class="experience-badge">
+                    <div class="experience-badge glass">
                         <span class="years">15+</span>
                         <span class="text">წელი გამოცდილება</span>
                     </div>
                 </div>
-                <div class="about-content" data-aos="fade-left">
+                <div class="about-content">
                     <span class="section-subtitle">ჩვენი ისტორია</span>
                     <h2 class="section-title">სადაც ტრადიცია <span>ხვდება</span> თანამედროვეობას</h2>
                     <p class="about-text">2010 წლიდან ვქმნით განსაკუთრებულ კულინარიულ გამოცდილებას ჩვენი სტუმრებისთვის. ჩვენი შეფ-მზარეულები დაუღალავად მუშაობენ, რათა თითოეული კერძი იქცეს ხელოვნების ნიმუშად.</p>
                     
                     <div class="features-grid">
-                        <div class="feature">
+                        <div class="feature glass-card">
                             <i class="fas fa-leaf"></i>
                             <h4>ახალი პროდუქტები</h4>
                             <p>ყოველდღიურად ვიყენებთ მხოლოდ ახალ, ადგილობრივ პროდუქტებს</p>
                         </div>
-                        <div class="feature">
+                        <div class="feature glass-card">
                             <i class="fas fa-wine-glass-alt"></i>
                             <h4>ღვინის მარანი</h4>
                             <p>100-ზე მეტი სახეობის ქართული და ევროპული ღვინო</p>
                         </div>
-                        <div class="feature">
+                        <div class="feature glass-card">
                             <i class="fas fa-users"></i>
                             <h4>პროფესიონალი შეფები</h4>
                             <p>საერთაშორისო გამოცდილების მქონე კულინარების გუნდი</p>
                         </div>
-                        <div class="feature">
+                        <div class="feature glass-card">
                             <i class="fas fa-star"></i>
                             <h4>პრემიუმ ხარისხი</h4>
                             <p>მხოლოდ საუკეთესო ინგრედიენტები და მომსახურება</p>
@@ -195,13 +184,6 @@
             </div>
             
             <div class="gallery-grid" id="gallery-grid"></div>
-            
-            <div class="gallery-follow">
-                <a href="#" class="btn primary">
-                    <i class="fab fa-instagram"></i>
-                    გამოგვყევით ინსტაგრამზე
-                </a>
-            </div>
         </div>
     </section>
 
@@ -220,7 +202,7 @@
     <!-- Reservation Section -->
     <section id="reservation" class="reservation">
         <div class="container">
-            <div class="reservation-content" data-aos="zoom-in">
+            <div class="reservation-content glass">
                 <span class="section-subtitle">დაჯავშნე</span>
                 <h2 class="section-title">განსაკუთრებული <span>საღამოსთვის</span></h2>
                 <form class="reservation-form">
@@ -236,11 +218,11 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" placeholder="ტელეფონი" required>
+                            <input type="tel" placeholder="ტელეფონი" required>
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="სტუმრების რაოდენობა" required>
+                            <input type="number" placeholder="სტუმრების რაოდენობა" required>
                             <i class="fas fa-users"></i>
                         </div>
                     </div>
@@ -254,9 +236,6 @@
                             <i class="fas fa-clock"></i>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="განსაკუთრებული მოთხოვნები"></textarea>
-                    </div>
                     <button type="submit" class="btn primary">დაჯავშნა</button>
                 </form>
             </div>
@@ -267,12 +246,12 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info" data-aos="fade-right">
+                <div class="contact-info">
                     <span class="section-subtitle">კონტაქტი</span>
                     <h2 class="section-title">დაგვიკავშირდით</h2>
                     
                     <div class="info-items">
-                        <div class="info-item">
+                        <div class="info-item glass-card">
                             <div class="info-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
@@ -282,7 +261,7 @@
                             </div>
                         </div>
                         
-                        <div class="info-item">
+                        <div class="info-item glass-card">
                             <div class="info-icon">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
@@ -293,7 +272,7 @@
                             </div>
                         </div>
                         
-                        <div class="info-item">
+                        <div class="info-item glass-card">
                             <div class="info-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
@@ -304,7 +283,7 @@
                             </div>
                         </div>
                         
-                        <div class="info-item">
+                        <div class="info-item glass-card">
                             <div class="info-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
@@ -317,7 +296,7 @@
                     </div>
                 </div>
                 
-                <div class="contact-map" data-aos="fade-left">
+                <div class="contact-map glass-card">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.332163304617!2d44.78962431542474!3d41.722737979236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7e64e7b0d%3A0xdebaaa1c4562e8c!2z4YOX4YOR4YOY4YOa4YOY4YOh4YOY!5e0!3m2!1ska!2sge!4v1620000000000!5m2!1ska!2sge" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
@@ -335,12 +314,11 @@
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>სწრაფი ბმულები</h4>
+                    <h4>ბმულები</h4>
                     <ul>
                         <li><a href="#home">მთავარი</a></li>
                         <li><a href="#about">ჩვენ შესახებ</a></li>
@@ -354,24 +332,15 @@
                 <div class="footer-hours">
                     <h4>სამუშაო საათები</h4>
                     <ul>
-                        <li><span>ორშაბათი - პარასკევი:</span> 12:00 - 00:00</li>
+                        <li><span>ორშ-პარ:</span> 12:00 - 00:00</li>
                         <li><span>შაბათი:</span> 12:00 - 02:00</li>
                         <li><span>კვირა:</span> 12:00 - 02:00</li>
                     </ul>
                 </div>
-                
-                <div class="footer-newsletter">
-                    <h4>სიახლეების გამოწერა</h4>
-                    <p>მიიღეთ ინფორმაცია ახალი კერძებისა და სპეციალური შეთავაზებების შესახებ</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="თქვენი ელ-ფოსტა">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 გურმანი. ყველა უფლება დაცულია. შექმნილია სიყვარულით</p>
+                <p>&copy; 2024 გურმანი. ყველა უფლება დაცულია.</p>
             </div>
         </div>
     </footer>
@@ -381,8 +350,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
