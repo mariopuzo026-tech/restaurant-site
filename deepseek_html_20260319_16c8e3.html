@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ჩემი რესტორანი | გემრიელი საჭმელი</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome 6 (უფასო ვერსია) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>გურმანი</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">მთავარი</a></li>
+                <li><a href="#about">ჩვენ შესახებ</a></li>
+                <li><a href="#menu">მენიუ</a></li>
+                <li><a href="#gallery">გალერეა</a></li>
+                <li><a href="#blog">ბლოგი</a></li>
+                <li><a href="#contact">კონტაქტი</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="hero">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200" alt="რესტორანი">
+                    <div class="slide-content">
+                        <h2>კეთილი იყოს თქვენი მობრძანება</h2>
+                        <p>ქართული სამზარეულოს საუკეთესო ტრადიციები</p>
+                        <a href="#menu" class="btn">იხილეთ მენიუ</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200" alt="კერძები">
+                    <div class="slide-content">
+                        <h2>ახალი გემოები</h2>
+                        <p>ყოველდღე ახალი და ნატურალური პროდუქტები</p>
+                        <a href="#menu" class="btn">იხილეთ მენიუ</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200" alt="ინტერიერი">
+                    <div class="slide-content">
+                        <h2>მყუდრო გარემო</h2>
+                        <p>იდეალური ადგილი ოჯახური სადილისთვის</p>
+                        <a href="#contact" class="btn">დაჯავშნე მაგიდა</a>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">ჩვენ შესახებ</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>ისტორია, რომელიც გემოვნებით იწერება</h3>
+                    <p>2010 წლიდან ვუმასპინძლებთ ჩვენს სტუმრებს ნამდვილი ქართული სამზარეულოს საუკეთესო ნიმუშებით. ჩვენი შეფ-მზარეულები ქმნიან კულინარიულ შედევრებს, რომლებიც აერთიანებს ტრადიციებსა და თანამედროვეობას.</p>
+                    <p>ჩვენ ვიყენებთ მხოლოდ ახალ, ადგილობრივ პროდუქტებს და ვამზადებთ სიყვარულით. ჩვენი მიზანია, თითოეულმა სტუმარმა წაიღოს დაუვიწყარი გემოვნებითი შეგრძნებები.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <span>50+ კერძი</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wine-glass-alt"></i>
+                            <span>100+ ღვინო</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <span>5000+ ბედნიერი სტუმარი</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552566624-52f8b3ae5fd5?w=600" alt="რესტორანი">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">ჩვენი მენიუ</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">ყველა</button>
+                <button class="category-btn" data-category="starters">სასტარტო</button>
+                <button class="category-btn" data-category="main">მთავარი კერძები</button>
+                <button class="category-btn" data-category="desserts">დესერტები</button>
+            </div>
+            <div class="menu-items" id="menu-items">
+                <!-- მენიუს აითემები დინამიურად დაემატება JavaScript-ით -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">გალერეა</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- გალერეის სურათები დაემატება JavaScript-ით -->
+            </div>
+            <div class="gallery-actions">
+                <button id="load-more-gallery" class="btn">მეტის ნახვა</button>
+            </div>
+        </div>
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">ბლოგი</h2>
+            <div class="blog-grid" id="blog-grid">
+                <!-- ბლოგის პოსტები დაემატება JavaScript-ით -->
+            </div>
+            <div class="blog-actions">
+                <button id="load-more" class="btn">მეტი პოსტი</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">კონტაქტი</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>დაგვიკავშირდით</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>რუსთაველი 45, თბილისი</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+995 32 2 123 456</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@restorani.ge</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>ყოველდღე: 12:00 - 00:00</p>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <h3>მოგვწერეთ</h3>
+                    <input type="text" placeholder="თქვენი სახელი" required>
+                    <input type="email" placeholder="ელ-ფოსტა" required>
+                    <input type="text" placeholder="სათაური">
+                    <textarea placeholder="მესიჯი" rows="5" required></textarea>
+                    <button type="submit" class="btn">გაგზავნა</button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>გურმანი</h3>
+                    <p>ქართული სამზარეულოს საუკეთესო ტრადიციები</p>
+                </div>
+                <div class="footer-section">
+                    <h3>სოციალური ქსელები</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 გურმანი. ყველა უფლება დაცულია.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
